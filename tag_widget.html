@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="tag_widget.css">
+<style>
+body, ul {
+  margin: 0;
+  padding: 0;
+}
+#test_container {
+  width:800px;
+  margin:200px auto;
+}
+</style>
+</head>
+<body>
+  <div id="test_container"></div>
+
+<script src="tz.js"></script>
+<script src="tag_widget.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var widgetContainer = document.getElementById("test_container");
+  var data = [];
+  for (var index in dataSet) {
+    for (var i = 0; i < dataSet[index].length; i++) {
+      data.push(dataSet[index][i].city);
+    }
+  }
+  var widgetInstance = new autocompleteTagWidget(widgetContainer, data);
+}, false);
+</script>
+</body>
+</html>
